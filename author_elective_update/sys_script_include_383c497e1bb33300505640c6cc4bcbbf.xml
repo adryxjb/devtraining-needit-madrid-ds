@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_58872_needit.GetUserData</api_name>
+        <client_callable>true</client_callable>
+        <description>Gets the follow user 's information:&#13;
+Name&#13;
+Mail&#13;
+Department</description>
+        <name>GetUserData</name>
+        <script><![CDATA[var GetUserData = Class.create();
+// Extend the global.AbstractAjaxProcessor class
+GetUserData.prototype = Object.extendsObject(global.AbstractAjaxProcessor,{
+	
+	getEmail: function() {
+		var mail = "mail";
+		var currentUser = gs.getUser(); 
+		var userRecord = new GlideRecord("sys_user");
+		userRecord.get(currentUser.getManagerID());
+		
+		gs.info('getEmail: ' + currentUser.getManagerID());
+		
+		var userData = {};
+		
+		userData.email = userRecord.getValue('email');
+		userData.department = userRecord.getValue('department');
+		userData.name = userRecord.getValue('sys_id');
+		
+		return JSON.stringify(userData);
+	},
+	type: 'GetUserData'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-09-13 19:21:03</sys_created_on>
+        <sys_id>383c497e1bb33300505640c6cc4bcbbf</sys_id>
+        <sys_mod_count>32</sys_mod_count>
+        <sys_name>GetUserData</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_script_include_383c497e1bb33300505640c6cc4bcbbf</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-09-17 14:49:47</sys_updated_on>
+    </sys_script_include>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="NeedIt_Madrid">6ead8e780f603200cd674f8ce1050ed1</application>
+        <file_path/>
+        <instance_id>ceeeb283dbb27304b847ac44d49619f1</instance_id>
+        <instance_name>dev89230</instance_name>
+        <name>sys_script_include_383c497e1bb33300505640c6cc4bcbbf</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;active&gt;true&lt;/active&gt;&lt;api_name&gt;x_58872_needit.GetUserData&lt;/api_name&gt;&lt;client_callable&gt;true&lt;/client_callable&gt;&lt;description&gt;Gets the follow user 's information:&amp;#13;
+Name&amp;#13;
+Mail&amp;#13;
+Department&lt;/description&gt;&lt;name&gt;GetUserData&lt;/name&gt;&lt;script&gt;&lt;![CDATA[var GetUserData = Class.create();
+// Extend the global.AbstractAjaxProcessor class
+GetUserData.prototype = Object.extendsObject(global.AbstractAjaxProcessor,{
+	
+	getEmail: function() {
+		var mail = "mail";
+		var currentUser = gs.getUser(); 
+		var userRecord = new GlideRecord("sys_user");
+		userRecord.get(currentUser.getManagerID());
+		
+		gs.info('getEmail: ' + currentUser.getManagerID());
+		
+		var userData = {};
+		
+		userData.email = userRecord.getValue('email');
+		userData.department = userRecord.getValue('department');
+		userData.name = userRecord.getValue('sys_id');
+		
+		return JSON.stringify(userData);
+	},
+	type: 'GetUserData'
+});]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2019-09-13 19:21:03&lt;/sys_created_on&gt;&lt;sys_id&gt;383c497e1bb33300505640c6cc4bcbbf&lt;/sys_id&gt;&lt;sys_mod_count&gt;32&lt;/sys_mod_count&gt;&lt;sys_name&gt;GetUserData&lt;/sys_name&gt;&lt;sys_package display_value="NeedIt" source="x_58872_needit"&gt;6ead8e780f603200cd674f8ce1050ed1&lt;/sys_package&gt;&lt;sys_policy&gt;read&lt;/sys_policy&gt;&lt;sys_scope display_value="NeedIt"&gt;6ead8e780f603200cd674f8ce1050ed1&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_383c497e1bb33300505640c6cc4bcbbf&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2019-09-17 14:49:47&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-1444158120</payload_hash>
+        <record_name>GetUserData</record_name>
+        <reverted_from/>
+        <source>c7e840a91b733300505640c6cc4bcb77</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-09-17 14:49:47</sys_created_on>
+        <sys_id>60f4fc801b8c0010505640c6cc4bcbd7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>16d3fb36fb50000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-09-17 14:49:47</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>a8f4fc80848c0010b1985832ab5069d6</update_guid>
+        <update_guid_history>a8f4fc80848c0010b1985832ab5069d6:-1444158120,05a4fc80098c0010de97f89134b9ef08:-785421628,92d37480f38c0010e62b0f68b24243c0:-1936890142,784f604c974c001074c8bfb4834dab38:-1455349473,60fc78f3cf373300c936ccc82d4873a1:-1968182211,cfebbcb36137330006ca8ec3b9409198:-1472434892,46b9bc337f3733007459fa750f02c21c:795739480,90f83033c237330030a3488fb23e3607:-1257305628,ac5874bff5f33300de5dfedb25f57cb7:-75421121,cf2834bf12f33300a202bbea5bad383c:-1952108948,5e847c3fa8f3330034207ab1147e6876:-1716305612,76e3f07f76f33300c4abc2b05f8fe9cc:1735245690,cf22f0fb7ef33300bb3972d260c5eb23:-2118392163,4e31b8bb09f333003e3bb2849a330ed5:725351785,c8a03cbbe0f3330015e5dc2579fc9158:-1585321267,1e207c7b68f333008dc1da0636653a2c:1426364803,04007c7b80f33300905390e1f8046c27:1911495244,6a3f6c7b3df333006a562f92fb8a5e00:1503885334,147d28f77df33300298b121c47ab3679:1070483527,25fca4f708f33300adab99a0d9fe9fc8:-1164585000,8dac28f7abf3330044d3dadba60c1485:-359231215,14cb2c37bcf33300d6517c992a62d460:2131651155,7b38d4bbb8b33300b3ea2fc8ed28bc18:-317113966,26185cbb0ab333007cefd915940eb302:-316260558,6db7d4f7a8b333005cd9d8cb4c2a6bba:1277407819,a01398b7ddb33300df9bf949e4f2db4e:611379994,6f9a7fe378733300785234b8517f1100:1735245690,981abfa70e733300d6bdc28a4762c984:-505097027,89f3ff630a73330038b9c718fda59bd5:1735733700,135033231773330033929d5ef096a156:1530175240,93f6af2b8f33330068ebd5cf1e5f2259:1859975593,6eb52b2bf73333004cbfa0e9de0c69c8:1171050492,97ac8d7e6cb3330029d5dbfde92f6fe4:562927650</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-09-17 14:58:07</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>106a6bb0721449848f6aba298a367810</sys_id>
+        <sys_metadata>383c497e1bb33300505640c6cc4bcbbf</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>GetUserData</sys_name>
+        <sys_package display_value="NeedIt_Madrid" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_parent/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="NeedIt_Madrid">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_scope_delete display_value="">94872a8897db403e8ee69a431de2fca4</sys_scope_delete>
+        <sys_update_name>sys_script_include_383c497e1bb33300505640c6cc4bcbbf</sys_update_name>
+        <sys_update_version display_value="sys_script_include_383c497e1bb33300505640c6cc4bcbbf">60f4fc801b8c0010505640c6cc4bcbd7</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-09-17 14:58:07</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
